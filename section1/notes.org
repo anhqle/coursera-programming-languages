@@ -1,0 +1,21 @@
+**Syntax** is how you write something
+**Semantics** is what it means
+
+Static environment: type checking, exist before the program evaluates
+Dynamic environment
+
+Every expression has 3 things:
+- Syntax
+- Type checking rules: produces a type or a fail
+- Evaluation rules: produces a result, error message, or infinite loop
+
+
+All values are expressions (they always evaluate to themselves**
+Not all expressions are values
+
+Shadowing :: add a variable to an environment, when there's already that variable in that environment
+
+Binding = giving names to things in a given well delimited context
+Assigning = storing things in some location
+
+When understand anything, there are always 3 rules: syntax rule, type checking rule, and evaluation rule
