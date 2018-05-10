@@ -1,0 +1,10 @@
+Lexical scope: where the function is defined, not where it is called
+
+A function has two parts
+- the code
+- the environment that was current when the function was define
+closure is this pair
+
+Dynamic scope: use environment where function is called (not used anymore)
+
+Exception is a bit like dynamic scope. Think about code inside a try block. If there is an exception in this code, the computer will walk up the call stack to find a catch block that handles this exception. That's very dynamic
