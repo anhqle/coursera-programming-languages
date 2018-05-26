@@ -2,7 +2,7 @@
 **Semantics** is what it means
 
 Static environment: type checking, exist before the program evaluates
-Dynamic environment
+Dynamic environment: uses for evaluation (check what is the value of this variable the current environment)
 
 Every expression has 3 things:
 - Syntax
@@ -14,6 +14,13 @@ All values are expressions (they always evaluate to themselves**
 Not all expressions are values
 
 Shadowing :: add a variable to an environment, when there's already that variable in that environment
+- Example:
+val a = 10
+val b = a * 2
+val a = 5 (* b is still mapped to 20 *)
+You can't re-assign a variable to another value. When we do a = 5, ML will create a new dynamic environment in which a = 5 (a is shadowed)
+In other words, there's no way to assign a variable in ML. You just create a new binding in a new dynamic environment
+That's why he doesn't want us to use "use" multiple times because it causes the previous bindings are still available later 
 
 Binding = giving names to things in a given well delimited context
 Assigning = storing things in some location
