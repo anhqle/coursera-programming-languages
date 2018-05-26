@@ -1,0 +1,7 @@
+* Unit 5
+
+General principle: If something you need not to change might change, make a copy of it
+
+A thunk is a function with no argument. We use it to pass things around without computing it
+
+A stream is a thunk that returns a pair. The first element in the pair is the first element of the stream, and the second element in the pair is another stream / thunk

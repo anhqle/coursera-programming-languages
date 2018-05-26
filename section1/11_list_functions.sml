@@ -38,3 +38,10 @@ fun seconds (xs : (int * int) list) =
 fun sum_pair_list2 (xs : (int * int) list) =
     (sum_list (firsts xs)) + (sum_list (seconds xs))
 
+(* In-video exercise *)
+
+(*A function that multiplies all the elements in a list *)
+fun list_product (xs : int list) =
+    if null xs
+    then 1
+    else hd(xs) * list_product(tl(xs))

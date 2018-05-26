@@ -26,3 +26,43 @@ Binding = giving names to things in a given well delimited context
 Assigning = storing things in some location
 
 When understand anything, there are always 3 rules: syntax rule, type checking rule, and evaluation rule
+
+** Tuples
+
+Specified size
+Must specify types, but can hold different types
+Can have more than two elements (triple, 4-tuple)
+
+** List
+
+Unspecified size
+Can only hold one type
+Functions involving list tend to be recursive (because of the unknown length)
+
+** Let
+
+`let b1 in e end` where b1 is a binding and e is an expression, e.g.
+let val x = 1 in x + 2 end;
+
+We can refer to things that we define both in later bindings and in the body, e.g. how y is defined in terms of x here:
+let val x = 1 in y = x + 10 in x + y end;
+
+Seems like a more explicitly way to define scope. In Python / R scope seems more explicit
+
+** Options
+
+A common scenario is we want to return "nothing" or "something". For example, a function that returns the max of a list will either return "nothing" for an empty list and "something" for a list. ML uses options for this scenario.
+
+Building an option:
+- NONE
+- SOME e
+
+Accessing stuff inside the option:
+- isSome has type 'a option -> bool
+- valof has type 'a option -> 'a (exception if None)
+
+** Benefits of immutability
+
+ML does not allow us to reassign a variable to another value (indeed, there is no assignment statement in the first place, only binding)
+
+The benefits is that when we do `y = x`, ML alias y and x (i.e. reuse x elements for y instead of making copies). This is more efficient. And since we know x never changes, we can be sure that y never changes because of x. (Languages with mutability runs this risk).

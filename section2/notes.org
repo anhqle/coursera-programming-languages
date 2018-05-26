@@ -1,0 +1,11 @@
+Datatype bindings (we have seen val binding, fun binding)
+- this is new and very unique to ML
+- 
+
+Every function in ML takes one argument, which is a tuple (NOT multiple argument)
+This facilitates passing the returned from a function to another function. It will work since every function takes one argument
+
+''a list 
+''a are "equality types", i.e. types that can be used with =
+
+Need review "Nested pattern precisely"
