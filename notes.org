@@ -1,3 +1,20 @@
+* Unit 3
+
+A closure is the "pair" of the function's code and the function's environment.
+
+Lexical scope: where the function is defined, not where it is called
+
+A function has two parts
+- the code
+- the environment that was current when the function was define
+closure is this pair
+
+Dynamic scope: use environment where function is called (not used anymore)
+
+Lexical scope vs dynamic scope: https://courses.cs.washington.edu/courses/cse341/13wi/videos/unit3/51_why_lexical_scope.mp4
+
+Exception is a bit like dynamic scope. Think about code inside a try block. If there is an exception in this code, the computer will walk up the call stack to find a catch block that handles this exception. That's very dynamic
+
 * Unit 5
 
 General principle: If something you need not to change might change, make a copy of it
@@ -5,3 +22,16 @@ General principle: If something you need not to change might change, make a copy
 A thunk is a function with no argument. We use it to pass things around without computing it
 
 A stream is a thunk that returns a pair. The first element in the pair is the first element of the stream, and the second element in the pair is another stream / thunk
+
+* Unit 6
+
+Interpreter: A program written in language A that takes a program in B and produces answers (in B)
+
+Compiler: A program written in language A that takes a program in B and translates it into a program in C. Then the program in C can be run. (For example C can be binary code)
+
+It doesn't make sense to say that a language is compiled or interpreted. What constitutes a language is a rule about its syntax and semantics. Whether it will be compiled or interpreted is just an implementation details. In other words, for any language, we can write a compiler or an interpreter for it.
+
+Static checking :: anything done to reject a program *after* it parses but *before* it runs
+- Static typing is one way to do static checking (i.e. checking that the types make sense). Another thing that is static checking but not static typing is like checking for array bound
+
+Weak typing (C / C++) is a minomer. It doesn't have anything to do with type. It's about doing neither static or dynamic typing.
