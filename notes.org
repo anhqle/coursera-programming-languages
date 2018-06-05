@@ -19,9 +19,11 @@ Exception is a bit like dynamic scope. Think about code inside a try block. If t
 
 General principle: If something you need not to change might change, make a copy of it
 
-A thunk is a function with no argument. We use it to pass things around without computing it
+A thunk is a function with no argument. We use it to pass things around without computing it (because what's inside the function won't be evaluated until the function is used)
 
 A stream is a thunk that returns a pair. The first element in the pair is the first element of the stream, and the second element in the pair is another stream / thunk
+
+Delay evaluation, lazy evaluation (using mutable pair)
 
 * Unit 6
 
@@ -35,3 +37,34 @@ Static checking :: anything done to reject a program *after* it parses but *befo
 - Static typing is one way to do static checking (i.e. checking that the types make sense). Another thing that is static checking but not static typing is like checking for array bound
 
 Weak typing (C / C++) is a minomer. It doesn't have anything to do with type. It's about doing neither static or dynamic typing.
+
+* Unit 7
+
+** Visibility
+
+It is a good OOP style that Ruby makes instance variables private by default, requiring getter/setter methods instead of directly manipulating instance variables. This approach emphasizes that OOP is about sending message to objects (i.e. getter/setter methods in this case). It also hides implementation details from the clients, assuring the clients that things will work as long as the same methods stay the same.
+
+Another example:
+def celsius_temp= x
+    @kelvin_temp = x + 273.15
+end
+
+Looking at this method it may seem like it's a setter for the @celcius_temp instance variable. But it's setting the @kelvin_temp instance variable instead! This kind of implementation details need not be exposed to the client.
+
+** Subclasses, inheritance, overriding
+
+This is the essence of OOP
+
+A colorpoint is_a? point -> true
+A colorpoint instance_of? point -> false
+But we shouldn't use is_a? and instance_of? because it's non-OOP style. It disallows things that "act like a duck"
+
+An alternative to subclassing is to store Point as an instance variable inside ColorPoint. This way, ColorPoint isn't a point, but has a point inside it. In this case it is bad style, but in other cases may be worth it.
+
+THE distinguishing feature of OOP is the fact that self is always available in the method body. Otherwise a method is quite similar to a closure: there's the code, and there's the arguments available in the environment
+
+Late binding: self.m2() in method m1, which is defined in class C, can resolve to a method m2 defined in subclass of C (if self is subclass of C)
+
+** 
+
+
