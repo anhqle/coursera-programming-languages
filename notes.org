@@ -15,6 +15,10 @@ Lexical scope vs dynamic scope: https://courses.cs.washington.edu/courses/cse341
 
 Exception is a bit like dynamic scope. Think about code inside a try block. If there is an exception in this code, the computer will walk up the call stack to find a catch block that handles this exception. That's very dynamic
 
+* Unit 4
+
+Invariants: properties of a datatype that all functions assume to be true and guarantee to keep true
+
 * Unit 5
 
 General principle: If something you need not to change might change, make a copy of it

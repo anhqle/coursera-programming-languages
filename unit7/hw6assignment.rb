@@ -3,8 +3,6 @@
 # This is the only file you turn in, so do not modify the other files as
 # part of your solution.
 
-require_relative './hw6provided.rb'
-
 class MyPiece < Piece
   # The constant All_My_Pieces should be declared here
   All_My_Pieces = [[[[0, 0], [1, 0], [0, 1], [1, 1]]],  # square (only needs one)
@@ -37,7 +35,7 @@ class MyBoard < Board
 
   def next_piece
     if @cheating
-      @current_block = MyPiece.new([[0, 0]], self)
+      @current_block = MyPiece.new([[[0, 0]]], self)
       @cheating = false # Reset @cheating after drawing the cheat piece
     else
       @current_block = MyPiece.next_piece(self)
@@ -46,7 +44,7 @@ class MyBoard < Board
   end
 
   def cheat
-    if @game.is_running? and @score > 100 and !@cheating
+    if @game.is_running? and @score >= 100 and !@cheating
       @score -= 100
       @cheating = true
     end
